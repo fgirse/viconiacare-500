@@ -1,0 +1,127 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "process": "Wie läuft es ab?",
+    "team": "Team",
+    "testimonials": "Referenzen",
+    "contact": "Kontakt",
+    "appointments": "Terminbuchung",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "login": "Anmelden"
+  },
+  "hero": {
+    "headline": "Professionelle Pflege anders",
+    "subline": "ViconiaCare GmbH – Ihr zuverlässiger ambulanter Pflegedienst in Hamburg und Umgebung",
+    "cta_primary": "Kostenlose Beratung",
+    "cta_secondary": "Unsere Leistungen entdecken",
+    "badge": "Zertifizierter Pflegedienst nach SGB XI & SGB V"
+  },
+  "services": {
+    "heading": "Unsere Leistungen",
+    "subheading": "Wir bieten ein umfassendes Pflegeangebot nach SGB XI und SGB V – abgestimmt auf Ihren individuellen Bedarf.",
+    "items": {
+      "grundpflege": {
+        "title": "Grundpflege",
+        "description": "Körperpflege, An- und Auskleiden, Mobilisierung – würdevoll und einfühlsam."
+      },
+      "behandlungspflege": {
+        "title": "Behandlungspflege (SGB V)",
+        "description": "Wundversorgung, Medikamentengabe, Injektionen und weitere ärztlich verordnete Leistungen."
+      },
+      "betreuung": {
+        "title": "Betreuung & Aktivierung",
+        "description": "Alltagsbegleitung, kognitive Aktivierung und soziale Teilhabe."
+      },
+      "hauswirtschaft": {
+        "title": "Hauswirtschaft",
+        "description": "Einkauf, Kochen, Reinigung – damit Sie sich in Ihrem Zuhause wohlfühlen."
+      },
+      "verhinderung": {
+        "title": "Verhinderungspflege",
+        "description": "Überbrückung wenn Ihre reguläre Pflegeperson verhindert ist."
+      },
+      "nacht": {
+        "title": "Nacht- & Bereitschaftsdienst",
+        "description": "24/7 Erreichbarkeit für Notfälle und Nachtpflege auf Anfrage."
+      }
+    }
+  },
+  "process": {
+    "heading": "So einfach starten Sie",
+    "subheading": "In vier Schritten zu Ihrer individuellen Pflege",
+    "steps": {
+      "step1": {
+        "title": "Ersttelefonat",
+        "description": "Wir hören Ihnen zu. In einem unverbindlichen Telefonat besprechen wir Ihre Situation und erste Möglichkeiten."
+      },
+      "step2": {
+        "title": "Bedarfsanalyse",
+        "description": "Ein Experteninterview mit unserem Pflegefachteam klärt Ihren genauen Unterstützungsbedarf."
+      },
+      "step3": {
+        "title": "Hausbesuch",
+        "description": "Wir kommen zu Ihnen – für eine persönliche Pflegeplanung direkt vor Ort."
+      },
+      "step4": {
+        "title": "Beginn der Pflege",
+        "description": "Ihr Pflegeplan steht. Wir beginnen – pünktlich, zuverlässig und mit einem festen Ansprechpartner."
+      }
+    }
+  },
+  "team": {
+    "heading": "Unser Team",
+    "subheading": "Erfahrene und einfühlsame Fachkräfte – für Sie da"
+  },
+  "testimonials": {
+    "heading": "Was unsere Kunden sagen",
+    "subheading": "Vertrauen, das sich täglich beweist"
+  },
+  "contact": {
+    "heading": "Kontakt aufnehmen",
+    "subheading": "Wir sind persönlich für Sie erreichbar",
+    "name": "Ihr Name",
+    "email": "Ihre E-Mail",
+    "phone": "Ihre Telefonnummer",
+    "message": "Ihre Nachricht",
+    "send": "Nachricht senden",
+    "success": "Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns bald!",
+    "error": "Es gab ein Problem. Bitte versuchen Sie es erneut."
+  },
+  "appointments": {
+    "heading": "Termin vereinbaren",
+    "subheading": "Wählen Sie einen für Sie passenden Termin",
+    "initial_call": "Ersttelefonat buchen",
+    "needs_assessment": "Bedarfsanalyse-Interview buchen"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten"
+  },
+  "dashboard": {
+    "overview": "Übersicht",
+    "patients": "Patienten",
+    "employees": "Mitarbeiter",
+    "billing": "Abrechnung",
+    "tours": "Tourenplanung",
+    "documents": "Dokumente",
+    "payroll": "Lohnabrechnung",
+    "settings": "Einstellungen"
+  },
+  "common": {
+    "loading": "Wird geladen…",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "create": "Erstellen",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "export": "Exportieren",
+    "print": "Drucken",
+    "close": "Schließen",
+    "confirm": "Bestätigen",
+    "back": "Zurück",
+    "next": "Weiter"
+  }
+}

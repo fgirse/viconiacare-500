@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "process": "Nasıl işliyor?",
+    "team": "Ekip",
+    "testimonials": "Referanslar",
+    "contact": "İletişim",
+    "appointments": "Randevu Al",
+    "dashboard": "Panel",
+    "admin": "Yönetici",
+    "login": "Giriş"
+  },
+  "hero": {
+    "headline": "Yürekten Profesyonel Bakım",
+    "subline": "ViconiaCare GmbH – Hamburgve çevresinde güvenilir evde bakım hizmetiniz",
+    "cta_primary": "Ücretsiz Danışma",
+    "cta_secondary": "Hizmetlerimizi Keşfedin",
+    "badge": "SGB XI & SGB V kapsamında sertifikalı bakım hizmeti"
+  },
+  "process": {
+    "heading": "Başlamak Çok Kolay",
+    "subheading": "Kişiselleştirilmiş bakımınıza giden dört adım",
+    "steps": {
+      "step1": { "title": "İlk Telefon Görüşmesi", "description": "Sizi dinliyoruz. Durumunuzu ve ilk seçenekleri konuşuyoruz." },
+      "step2": { "title": "İhtiyaç Analizi", "description": "Uzman görüşmesiyle tam ihtiyaçlarınız belirleniyor." },
+      "step3": { "title": "Ev Ziyareti", "description": "Yanınıza geliyoruz – yerinde kişisel bakım planı için." },
+      "step4": { "title": "Bakıma Başlangıç", "description": "Planınız hazır. Zamanında, güvenilir ve sabit bir kişiyle başlıyoruz." }
+    }
+  },
+  "contact": {
+    "heading": "Bize Ulaşın",
+    "subheading": "Size kişisel olarak ulaşabiliriz",
+    "name": "Adınız",
+    "email": "E-postanız",
+    "phone": "Telefon Numaranız",
+    "message": "Mesajınız",
+    "send": "Mesaj Gönder",
+    "success": "Mesajınız başarıyla gönderildi. Çok yakında size döneceğiz!",
+    "error": "Bir sorun oluştu. Lütfen tekrar deneyin."
+  },
+  "common": {
+    "loading": "Yükleniyor…",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "back": "Geri",
+    "next": "İleri"
+  }
+}

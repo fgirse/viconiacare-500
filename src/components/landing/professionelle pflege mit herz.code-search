@@ -1,0 +1,29 @@
+# Query: professionelle pflege mit herz
+# ContextLines: 1
+
+5 results - 5 files
+
+.next/server/_rsc_messages_de_json.js:
+  19  
+  20: module.exports = /*#__PURE__*/JSON.parse('{"nav":{"home":"Startseite","services":"Leistungen","process":"Wie läuft es ab?","team":"Team","testimonials":"Referenzen","contact":"Kontakt","appointments":"Terminbuchung","dashboard":"Dashboard","admin":"Admin","login":"Anmelden"},"hero":{"headline":"Professionelle Pflege anderst","subline":"ViconiaCare GmbH – Ihr zuverlässiger ambulanter Pflegedienst in Hamburg und Umgebung","cta_primary":"Kostenlose Beratung","cta_secondary":"Unsere Leistungen entdecken","badge":"Zertifizierter Pflegedienst nach SGB XI & SGB V"},"services":{"heading":"Unsere Leistungen","subheading":"Wir bieten ein umfassendes Pflegeangebot nach SGB XI und SGB V – abgestimmt auf Ihren individuellen Bedarf.","items":{"grundpflege":{"title":"Grundpflege","description":"Körperpflege, An- und Auskleiden, Mobilisierung – würdevoll und einfühlsam."},"behandlungspflege":{"title":"Behandlungspflege (SGB V)","description":"Wundversorgung, Medikamentengabe, Injektionen und weitere ärztlich verordnete Leistungen."},"betreuung":{"title":"Betreuung & Aktivierung","description":"Alltagsbegleitung, kognitive Aktivierung und soziale Teilhabe."},"hauswirtschaft":{"title":"Hauswirtschaft","description":"Einkauf, Kochen, Reinigung – damit Sie sich in Ihrem Zuhause wohlfühlen."},"ve
+  21  
+
+.next/server/app/(app)/[locale]/page.js:
+  153  "use strict";
+  154: ⟪ 1763 characters skipped ⟫IMPORTED_MODULE_1__ = __webpack_require__(/*! ./globals.css */ \"(rsc)/./src/app/globals.css\");\n\n\n\nconst metadata = {\n    title: 'ViconiaCare GmbH',\n    description: 'Ambulanter Pflegedienst – professionelle Pflege mit Herz'\n};\nfunction RootLayout({ children }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"html\", {\n        suppressHydrationWarning: true,\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"body\", {\n            className: (next_font_google_target_css_path_src_app_layout_tsx_import_Inter_arguments_subsets_latin_latin_ext_cyrillic_variableName_inter___WEBPACK_IMPORTED_MODULE_2___default().className),\n            children: children\n        }, void 0, false, {\n            fileName: \"/Users/fgirse/viconiacare-500/src/app/layout.tsx\",\n            lineNumber: 15,\n            columnNumber: 7\n        }, this)\n    }, void 0, false, {\n        fileName: \"/Users/fgirse/viconiacare-500/src/app/layout.tsx\",\n        lineNumber: 14,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZX
+  155  
+
+.next/server/app/_not-found/page.js:
+  63  "use strict";
+  64: ⟪ 1763 characters skipped ⟫IMPORTED_MODULE_1__ = __webpack_require__(/*! ./globals.css */ \"(rsc)/./src/app/globals.css\");\n\n\n\nconst metadata = {\n    title: 'ViconiaCare GmbH',\n    description: 'Ambulanter Pflegedienst – professionelle Pflege mit Herz'\n};\nfunction RootLayout({ children }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"html\", {\n        suppressHydrationWarning: true,\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"body\", {\n            className: (next_font_google_target_css_path_src_app_layout_tsx_import_Inter_arguments_subsets_latin_latin_ext_cyrillic_variableName_inter___WEBPACK_IMPORTED_MODULE_2___default().className),\n            children: children\n        }, void 0, false, {\n            fileName: \"/Users/fgirse/viconiacare-500/src/app/layout.tsx\",\n            lineNumber: 15,\n            columnNumber: 7\n        }, this)\n    }, void 0, false, {\n        fileName: \"/Users/fgirse/viconiacare-500/src/app/layout.tsx\",\n        lineNumber: 14,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZX
+  65  
+
+messages/de.json:
+  14    "hero": {
+  15:     "headline": "Professionelle Pflege anderst",
+  16      "subline": "ViconiaCare GmbH – Ihr zuverlässiger ambulanter Pflegedienst in Hamburg und Umgebung",
+
+src/app/layout.tsx:
+  8    title: 'ViconiaCare GmbH',
+  9:   description: 'Ambulanter Pflegedienst – professionelle Pflege anderst',
+  10  }

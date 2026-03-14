@@ -1,0 +1,127 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "process": "How it works",
+    "team": "Team",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "appointments": "Book Appointment",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "login": "Login"
+  },
+  "hero": {
+    "headline": "Professional Care with Heart",
+    "subline": "ViconiaCare GmbH – Your reliable home care service in Hamburgand surroundings",
+    "cta_primary": "Free Consultation",
+    "cta_secondary": "Discover Our Services",
+    "badge": "Certified Care Service under SGB XI & SGB V"
+  },
+  "services": {
+    "heading": "Our Services",
+    "subheading": "We offer a comprehensive range of care services under SGB XI and SGB V – tailored to your individual needs.",
+    "items": {
+      "grundpflege": {
+        "title": "Basic Care",
+        "description": "Personal hygiene, dressing/undressing, mobilization – dignified and compassionate."
+      },
+      "behandlungspflege": {
+        "title": "Medical Care (SGB V)",
+        "description": "Wound care, medication administration, injections and other physician-prescribed services."
+      },
+      "betreuung": {
+        "title": "Companionship & Activation",
+        "description": "Daily accompaniment, cognitive activation and social participation."
+      },
+      "hauswirtschaft": {
+        "title": "Household Support",
+        "description": "Shopping, cooking, cleaning – so you feel comfortable at home."
+      },
+      "verhinderung": {
+        "title": "Respite Care",
+        "description": "Bridging care when your regular caregiver is unavailable."
+      },
+      "nacht": {
+        "title": "Night & On-Call Service",
+        "description": "24/7 availability for emergencies and night care on request."
+      }
+    }
+  },
+  "process": {
+    "heading": "Getting Started is Simple",
+    "subheading": "Four steps to your personalized care",
+    "steps": {
+      "step1": {
+        "title": "Initial Phone Call",
+        "description": "We listen to you. In a no-obligation call we discuss your situation and first options."
+      },
+      "step2": {
+        "title": "Needs Assessment",
+        "description": "An expert interview with our care team clarifies your exact support needs."
+      },
+      "step3": {
+        "title": "Home Visit",
+        "description": "We come to you – for a personal care plan right at home."
+      },
+      "step4": {
+        "title": "Care Begins",
+        "description": "Your care plan is ready. We start – punctual, reliable and with a dedicated contact person."
+      }
+    }
+  },
+  "team": {
+    "heading": "Our Team",
+    "subheading": "Experienced and compassionate professionals – here for you"
+  },
+  "testimonials": {
+    "heading": "What Our Clients Say",
+    "subheading": "Trust that proves itself every day"
+  },
+  "contact": {
+    "heading": "Get in Touch",
+    "subheading": "We are personally available for you",
+    "name": "Your Name",
+    "email": "Your Email",
+    "phone": "Your Phone Number",
+    "message": "Your Message",
+    "send": "Send Message",
+    "success": "Your message was sent successfully. We'll be in touch soon!",
+    "error": "There was a problem. Please try again."
+  },
+  "appointments": {
+    "heading": "Book an Appointment",
+    "subheading": "Choose a time that suits you",
+    "initial_call": "Book Initial Call",
+    "needs_assessment": "Book Needs Assessment Interview"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "dashboard": {
+    "overview": "Overview",
+    "patients": "Patients",
+    "employees": "Employees",
+    "billing": "Billing",
+    "tours": "Tour Planning",
+    "documents": "Documents",
+    "payroll": "Payroll",
+    "settings": "Settings"
+  },
+  "common": {
+    "loading": "Loading…",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "print": "Print",
+    "close": "Close",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next"
+  }
+}
