@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { MainNavigation } from '@/components/navigation/MainNavigation'
 import { Footer } from '@/components/footer/Footer'
+import BackToTop from '@/components/BackToTop'
 
 type Props = {
   children: React.ReactNode
@@ -41,6 +42,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <MainNavigation locale={locale} />
       <main>{children}</main>
       <Footer locale={locale} />
+      <BackToTop/>
     </NextIntlClientProvider>
   )
 }

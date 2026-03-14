@@ -202,16 +202,16 @@ function MobileNav({ locale }: { locale: string }) {
             </div>
           ))}
           <div className="border-t mt-4 pt-4 flex flex-col gap-2">
-            <Link href="/admin" onClick={() => setOpen(false)}>
-              <Button variant="outline" size="sm" className="w-full gap-2">
+            <Button asChild variant="outline" size="sm" className="w-full gap-2">
+              <Link href="/admin" onClick={() => setOpen(false)}>
                 <Settings className="h-4 w-4" /> {t('admin')}
-              </Button>
-            </Link>
-            <Link href="/login" onClick={() => setOpen(false)}>
-              <Button size="sm" className="w-full gap-2">
+              </Link>
+            </Button>
+            <Button asChild size="sm" className="w-full gap-2">
+              <Link href="/login" onClick={() => setOpen(false)}>
                 <LogIn className="h-4 w-4" /> {t('login')}
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </nav>
       </SheetContent>
@@ -314,19 +314,19 @@ export function MainNavigation({ locale }: MainNavigationProps) {
         <div className="flex items-center gap-2">
           <LanguageSwitcher locale={locale} />
 
-          <Link href="/admin" className="hidden sm:flex">
-            <Button variant="outline" size="sm" className="gap-1.5">
+          <Button asChild variant="outline" size="sm" className="hidden sm:flex gap-1.5">
+            <Link href="/admin">
               <Settings className="h-3.5 w-3.5" />
               {t('admin')}
-            </Button>
-          </Link>
+            </Link>
+          </Button>
 
-          <Link href="/login" className="hidden sm:flex">
-            <Button size="sm" className="gap-1.5">
+          <Button asChild size="sm" className="hidden sm:flex gap-1.5">
+            <Link href="/login">
               <LogIn className="h-3.5 w-3.5" />
               {t('login')}
-            </Button>
-          </Link>
+            </Link>
+          </Button>
 
           <MobileNav locale={locale} />
         </div>

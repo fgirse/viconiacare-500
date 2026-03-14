@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Heart, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
-
+import Image from 'next/image'
+import Logo from '../../../public/Assets/SVG/ViconiaLogooBG.svg';
 const FOOTER_COLUMNS = [
   {
     heading: 'Leistungen',
@@ -62,8 +63,9 @@ export function Footer({ locale }: FooterProps) {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <Heart className="h-7 w-7 fill-viconia-500 text-viconia-500" />
-              <span className="text-xl font-bold text-white">ViconiaCare</span>
+            <div className='w-60 '>
+            <Image src={Logo} alt="ViconiaCare Logo" width={320}className=' bg-stone-300'/>
+            </div>
             </Link>
             <p className="text-sm text-gray-400 mb-6 leading-relaxed">
               Professioneller ambulanter Pflegedienst in Hamburg und Umgebung. Wir verbinden
