@@ -1,4 +1,5 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { resendAdapter } from '@payloadcms/email-resend'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import path from 'path'
@@ -37,7 +38,7 @@ export default buildConfig({
     },
     components: {
       beforeNavLinks: [
-        '/components/admin/DashboardLink#DashboardLink',
+        '/src/components/admin/DashboardLink#DashboardLink',
       ],
     },
   },
@@ -62,6 +63,11 @@ export default buildConfig({
     FooterNavigation,
   ],
   editor: lexicalEditor({}),
+  email: resendAdapter({
+    defaultFromAddress: process.env.RESEND_FROM_EMAIL || 'noreply@viconiacare.de',
+    defaultFromName: 'ViconiaCare',
+    apiKey: process.env.RESEND_API_KEY || '',
+  }),
   secret: process.env.PAYLOAD_SECRET || 'fallback-secret-change-me',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

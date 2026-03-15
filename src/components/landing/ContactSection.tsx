@@ -49,7 +49,7 @@ export function ContactSection() {
     <section id="kontakt" className="py-24 bg-background">
       <div className="container">
         <div className="text-center mb-16">
-          <span className="text-viconia-600 text-sm font-semibold uppercase tracking-wider mb-2 inline-block">
+          <span className="text-yellow-600 text-sm font-semibold uppercase tracking-wider mb-2 inline-block">
             Sprechen Sie mit uns
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t('heading')}</h2>
@@ -76,8 +76,8 @@ export function ContactSection() {
                 {
                   icon: MapPin,
                   title: 'Adresse',
-                  value: 'Musterstraße 1, 10115 Berlin',
-                  href: 'https://maps.google.com/?q=Berlin',
+                  value: 'Telemannstraße 1, 20255 Hamburg',
+                  href: 'https://maps.google.com/?q=Telemannstraße+1,+20255+Hamburg',
                 },
                 {
                   icon: Clock,

@@ -91,11 +91,11 @@ export function ProcessSection() {
                   </p>
 
                   {step.ctaHref && (
-                    <Link href={step.ctaHref} className="mt-4 inline-block">
-                      <Button size="sm" variant="outline" className="text-viconia-600 border-viconia-200 hover:bg-viconia-50">
+                    <Button asChild size="sm" variant="outline" className="mt-4 text-viconia-600 border-viconia-200 hover:bg-viconia-50">
+                      <Link href={step.ctaHref}>
                         Jetzt buchen →
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
                   )}
                 </div>
               </motion.div>

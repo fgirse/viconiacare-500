@@ -77,7 +77,7 @@ export function Footer({ locale }: FooterProps) {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-viconia-400 shrink-0 mt-0.5" />
-                <span>Musterstraße 1, 10115 Berlin</span>
+                <span>Telemannstraße 21, 20255 Hamburg</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-viconia-400 shrink-0" />

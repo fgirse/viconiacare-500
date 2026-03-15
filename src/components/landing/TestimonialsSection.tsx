@@ -1,64 +1,27 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
+import { getPayload } from 'payload'
+import config from '@payload-config'
 import { Star, Quote } from 'lucide-react'
+import Image from 'next/image'
 
-const TESTIMONIALS = [
-  {
-    name: 'Heike M.',
-    role: 'Tochter einer Patientin',
-    quote:
-      'Ich bin so froh, ViconiaCare gefunden zu haben. Meine Mutter ist in den besten Händen – die Pflegekräfte sind wie Familie.',
-    rating: 5,
-    initials: 'HM',
-    bgColor: 'bg-viconia-500',
-  },
-  {
-    name: 'Wolfgang S.',
-    role: 'Patient, Pflegegrad 3',
-    quote:
-      'Zuverlässig, pünktlich und immer freundlich. Die Abrechnung läuft reibungslos direkt mit der Pflegekasse. Kann ich nur empfehlen!',
-    rating: 5,
-    initials: 'WS',
-    bgColor: 'bg-blue-500',
-  },
-  {
-    name: 'Irina K.',
-    role: 'Patientin (russischsprachig)',
-    quote:
-      'Endlich ein Pflegedienst, der auch Russisch spricht. Das gibt mir und meiner Familie ein gutes Gefühl.',
-    rating: 5,
-    initials: 'IK',
-    bgColor: 'bg-violet-500',
-  },
-  {
-    name: 'Mustafa A.',
-    role: 'Sohn eines Patienten',
-    quote:
-      'Die türkischsprachige Pflegekraft hat meinem Vater den Einstieg in die Pflege so viel leichter gemacht. Herzlichen Dank!',
-    rating: 5,
-    initials: 'MA',
-    bgColor: 'bg-amber-500',
-  },
-  {
-    name: 'Gerda L.',
-    role: 'Langzeitpatientin',
-    quote:
-      'Seit drei Jahren betreut mich ViconiaCare. Ich schätze besonders die Konstanz – immer die gleichen Gesichter kommen zu mir.',
-    rating: 5,
-    initials: 'GL',
-    bgColor: 'bg-teal-500',
-  },
-  {
-    name: 'Peter F.',
-    role: 'Patient nach Krankenhausaufenthalt',
-    quote:
-      'Die Übergabe aus dem Krankenhaus war reibungslos. ViconiaCare hat alles kurzerhand übernommen. Sehr professionell.',
-    rating: 5,
-    initials: 'PF',
-    bgColor: 'bg-rose-500',
-  },
+// Fallback colours cycled by index
+const AVATAR_COLORS = [
+  'bg-viconia-500',
+  'bg-blue-500',
+  'bg-violet-500',
+  'bg-amber-500',
+  'bg-teal-500',
+  'bg-rose-500',
 ]
+
+function initials(name: string) {
+  return name
+    .split(' ')
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join('')
+    .toUpperCase()
+}
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -73,14 +36,22 @@ function StarRating({ rating }: { rating: number }) {
   )
 }
 
-export function TestimonialsSection() {
-  const t = useTranslations('testimonials')
+export async function TestimonialsSection() {
+  const t = await getTranslations('testimonials')
+
+  const payload = await getPayload({ config })
+  const { docs } = await payload.find({
+    collection: 'testimonials',
+    where: { isPublished: { equals: true } },
+    sort: 'sortOrder',
+    limit: 12,
+  })
 
   return (
-    <section id="referenzen" className="py-24 bg-gray-50">
+    <section id="referenzen" className="py-24 bg-yellow-500/10">
       <div className="container">
         <div className="text-center mb-16">
-          <span className="text-viconia-600 text-sm font-semibold uppercase tracking-wider mb-2 inline-block">
+          <span className="text-yellow-600 text-sm font-semibold uppercase tracking-wider mb-2 inline-block">
             Über 500 zufriedene Familien
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t('heading')}</h2>
@@ -88,30 +59,52 @@ export function TestimonialsSection() {
         </div>
 
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-          {TESTIMONIALS.map((review) => (
-            <div
-              key={review.name}
-              className="break-inside-avoid bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
-            >
-              <Quote className="h-8 w-8 text-viconia-200 mb-4" />
+          {docs.map((review, idx) => {
+            const rating = Number(review.rating ?? 5)
+            const photo = review.authorPhoto as { url?: string | null } | null | undefined
+            const photoUrl =
+              photo && typeof photo === 'object' && photo.url ? photo.url : null
+            const color = AVATAR_COLORS[idx % AVATAR_COLORS.length]
 
-              <p className="text-gray-700 text-sm leading-relaxed mb-4 italic">&quot;{review.quote}&quot;</p>
+            return (
+              <div
+                key={review.id}
+                className="break-inside-avoid bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <Quote className="h-8 w-8 text-viconia-200 mb-4" />
 
-              <StarRating rating={review.rating} />
+                <p className="text-gray-700 text-sm leading-relaxed mb-4 italic">
+                  &quot;{review.quote}&quot;
+                </p>
 
-              <div className="flex items-center gap-3 mt-4">
-                <div
-                  className={`${review.bgColor} text-white h-10 w-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0`}
-                >
-                  {review.initials}
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900 text-sm">{review.name}</div>
-                  <div className="text-muted-foreground text-xs">{review.role}</div>
+                <StarRating rating={rating} />
+
+                <div className="flex items-center gap-3 mt-4">
+                  {photoUrl ? (
+                    <Image
+                      src={photoUrl}
+                      alt={review.authorName}
+                      width={40}
+                      height={40}
+                      className="h-10 w-10 rounded-full object-cover shrink-0"
+                    />
+                  ) : (
+                    <div
+                      className={`${color} text-white h-10 w-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0`}
+                    >
+                      {initials(review.authorName)}
+                    </div>
+                  )}
+                  <div>
+                    <div className="font-semibold text-gray-900 text-sm">{review.authorName}</div>
+                    {review.authorRole && (
+                      <div className="text-muted-foreground text-xs">{review.authorRole}</div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

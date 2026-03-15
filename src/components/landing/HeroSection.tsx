@@ -19,7 +19,7 @@ export function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0 bg-[url('/Assets/SVG/Herobg.svg')] bg-cover bg-center opacity-10" />
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-20">
         <div
           className="absolute inset-0"
           style={{
@@ -73,13 +73,13 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="xl" asChild className="bg-yellow-600 text-[#252928] hover:bg-yellow-400/50 shadow-lg">
+              <Button size="lg" asChild className="bg-yellow-600 text-[#252928] hover:bg-yellow-400/50 shadow-lg">
                 <Link href="/#termine">
                   <Phone className="h-5 w-5" />
                   {t('cta_primary')}
                 </Link>
               </Button>
-              <Button size="xl" variant="outline" asChild className="border-teal/90 text-[#252928] hover:bg-yellow-400/50 backdrop-blur-sm">
+              <Button size="lg" variant="outline" asChild className="border-teal/90 text-[#252928] hover:bg-yellow-400/50 backdrop-blur-sm">
                 <Link href="/#leistungen">
                   {t('cta_secondary')}
                   <ArrowRight className="h-5 w-5" />

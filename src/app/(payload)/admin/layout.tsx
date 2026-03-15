@@ -2,7 +2,7 @@ import type React from 'react'
 import { RootLayout, handleServerFunctions } from '@payloadcms/next/layouts'
 import config from '@payload-config'
 import type { ServerFunctionClientArgs } from 'payload'
-import { importMap } from './importMap.js'
+import { importMap } from './[[...segments]]/importMap'
 
 type Args = {
   children: React.ReactNode

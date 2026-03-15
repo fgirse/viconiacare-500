@@ -70,7 +70,7 @@ const NAV_ITEMS = [
   },
   {
     key: 'team',
-    href: '/#team',
+    href: '/team',
     icon: Users,
   },
   {
