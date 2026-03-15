@@ -41,9 +41,9 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
             className="text-white"
           >
-            <div className='flex flex-row justify-between' >
-                <Image src={Graffity} alt="Graffity" width={400} height={300} className='relative z-10 size-36 sm:size-60 lg:size-80 -rotate-[15deg] sm:-top-20 lg:-top-24'  />
-                 <Image src={CTA} alt="Termin Button" width={400} height={300} className='relative z-10 size-32 sm:size-60 lg:size-80 -rotate-[15deg] sm:-top-20 lg:-top-24'  />
+            <div className='flex flex-row justify-between relative lg:top-[5vwr] lg:right-[4vw] ' >
+                <Image src={Graffity} alt="Graffity" width={800} height={300} className='relative z-10 size-36 left-2 sm:size-60 lg:w-[20vw] -rotate-[-15deg] sm:-top-20 lg:-top-20'  />
+                 <Image src={CTA} alt="Termin Button" width={400} height={300} className='relative z-10 size-32 sm:size-60 lg:size-80 -rotate-[-25deg] sm:-top-20 lg:-top-24'  />
             </div>
             <Badge className="mb-6 bg-viconia-500/20 text-[#252928] border border-viconia-400/30 backdrop-blur-sm">
               <Shield className="h-3 w-3 mr-1" />
