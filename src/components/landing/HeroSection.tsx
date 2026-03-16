@@ -32,8 +32,8 @@ export function HeroSection() {
       <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-viconia-500/20 blur-3xl" />
       <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-viconia-400/20 blur-3xl" />
 
-      {/* Logo – mobile/tablet only, top-right, above backgrounds but below content */}
-      <div className="lg:hidden absolute p-12 top-6 right-4 z-[1] rounded-xl pointer-events-none bg-stone-200">
+      {/* Logo – mobile/tablet only, top-right, uppermost layer */}
+      <div className="lg:hidden absolute p-8 top-6 right-4 z-20 rounded-xl pointer-events-none bg-stone-200">
         <Image src={Logo} alt="ViconiaCare Logo" width={160} height={60} className="w-32 sm:w-44 object-contain" />
       </div>
 
@@ -47,7 +47,7 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
             className="text-white"
           >
-            <div className='flex flex-row justify-between relative lg:top-[5vwr] lg:right-[4vw] ' >
+            <div className='flex flex-row justify-between relative lg:top-[-2vw] lg:right-[4vw] ' >
                 <Image src={Graffity} alt="Graffity" width={800} height={300} className='relative z-10 size-36 w-[40vw] left-2 sm:size-60 lg:w-[50vw] rotate-[-15deg] sm:-top-30 md:w-[50vw]  md:-top-32 lg:-top-20 lg:left-[-12vw]'  />
                  <Image src={CTA} alt="Termin Button" width={400} height={300} className=' relative z-10 size-24 top-[6vh] sm:size-36 lg:size-80 rotate-[-15deg] sm:-top-20 md:top-20 lg:left-[-12vw] lg:-top-24'  />
             </div>
@@ -80,7 +80,7 @@ export function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild className="bg-yellow-600 text-[#252928] hover:bg-yellow-400/50 shadow-lg">
-                <Link href="/#termine">
+                <Link href="/termine">
                   <Phone className="h-5 w-5" />
                   {t('cta_primary')}
                 </Link>

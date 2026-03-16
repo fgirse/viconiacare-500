@@ -1,11 +1,21 @@
 import type { Metadata } from 'next'
+import { Barlow } from 'next/font/google'
+import '@/app/globals.css'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { MainNavigation } from '@/components/navigation/MainNavigation'
+import type { CmsNavData } from '@/components/navigation/MainNavigation'
 import { Footer } from '@/components/footer/Footer'
 import BackToTop from '@/components/BackToTop'
+import config from '@payload-config'
+import { getPayload } from 'payload'
+
+const barlow = Barlow({
+  subsets: ['latin', 'latin-ext'],
+  weight: '100',
+})
 
 type Props = {
   children: React.ReactNode
@@ -36,12 +46,28 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages()
 
+  let navData: CmsNavData | null = null
+  try {
+    const payload = await getPayload({ config })
+    navData = await payload.findGlobal({
+      slug: 'navigation',
+      locale: locale as any,
+      depth: 1,
+    }) as unknown as CmsNavData
+  } catch {
+    // silently fall back to static nav
+  }
+
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <MainNavigation locale={locale} />
-      <main>{children}</main>
-      <Footer locale={locale} />
-      <BackToTop/>
-    </NextIntlClientProvider>
+    <html lang={locale} suppressHydrationWarning>
+      <body className={barlow.className} suppressHydrationWarning>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <MainNavigation locale={locale} navData={navData} />
+          <main>{children}</main>
+          <Footer locale={locale} />
+          <BackToTop />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   )
 }

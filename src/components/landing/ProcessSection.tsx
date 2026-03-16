@@ -12,28 +12,28 @@ const STEPS = [
     number: 1,
     key: 'step1',
     icon: Phone,
-    color: 'bg-viconia-500',
+    color: 'bg-yellow-500',
     ctaHref: '/#termine',
   },
   {
     number: 2,
     key: 'step2',
     icon: ClipboardList,
-    color: 'bg-viconia-600',
+    color: 'bg-yellow-500',
     ctaHref: '/#termine',
   },
   {
     number: 3,
     key: 'step3',
     icon: Home,
-    color: 'bg-viconia-700',
+    color: 'bg-yellow-500',
     ctaHref: null,
   },
   {
     number: 4,
     key: 'step4',
     icon: Heart,
-    color: 'bg-viconia-800',
+    color: 'bg-yellow-500',
     ctaHref: null,
   },
 ]
@@ -47,7 +47,7 @@ export function ProcessSection() {
     <section id="ablauf" className="py-24 bg-gray-50" ref={ref}>
       <div className="container">
         <div className="text-center mb-16">
-          <span className="text-viconia-600 text-sm font-semibold uppercase tracking-wider mb-2 inline-block">
+          <span className="text-yellow-600 text-sm font-semibold uppercase tracking-wider mb-2 inline-block">
             In 4 Schritten
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -61,7 +61,7 @@ export function ProcessSection() {
         {/* Stair-step layout */}
         <div className="relative">
           {/* Connector line (desktop) */}
-          <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-viconia-300 to-viconia-600 z-0" />
+          <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-yellow-300 to-yellow-600 z-0" />
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((step, index) => (
@@ -79,7 +79,7 @@ export function ProcessSection() {
                       {step.number}
                     </div>
                     <div className={`${step.color} bg-opacity-10 p-2 rounded-lg`}>
-                      <step.icon className="h-5 w-5 text-viconia-700" />
+                      <step.icon className="h-5 w-5 text-yellow-600" />
                     </div>
                   </div>
 
@@ -91,7 +91,7 @@ export function ProcessSection() {
                   </p>
 
                   {step.ctaHref && (
-                    <Button asChild size="sm" variant="outline" className="mt-4 text-viconia-600 border-viconia-200 hover:bg-viconia-50">
+                    <Button asChild size="sm" variant="outline" className="mt-4 text-yellow-600 border-viconia-200 hover:bg-viconia-50">
                       <Link href={step.ctaHref}>
                         Jetzt buchen →
                       </Link>
