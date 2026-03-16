@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { Phone, ClipboardList, Home, Heart } from 'lucide-react'
-import { motion, useInView } from 'framer-motion'
+import { LazyMotion, domAnimation, m, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
@@ -65,8 +65,8 @@ export function ProcessSection() {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((step, index) => (
-              <motion.div
-                key={step.key}
+              <LazyMotion key={step.key} features={domAnimation}>
+              <m.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: index * 8 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
@@ -98,7 +98,8 @@ export function ProcessSection() {
                     </Button>
                   )}
                 </div>
-              </motion.div>
+              </m.div>
+              </LazyMotion>
             ))}
           </div>
         </div>
