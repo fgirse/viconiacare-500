@@ -1,7 +1,92 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
 
+/*
+  Dark mode via .dark class (replaces darkMode: ['class'] in tailwind.config)
+*/
+@variant dark (&:is(.dark *));
+
+/*
+  All theme tokens — replaces tailwind.config.ts `theme.extend`
+*/
+@theme inline {
+  /* Semantic colour tokens (reference :root CSS variables) */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  /* ViconiaCare brand colours */
+  --color-brand: #fecc00;
+  --color-viconia-50: #f0fdf8;
+  --color-viconia-100: #ccfaec;
+  --color-viconia-200: #99f4d9;
+  --color-viconia-300: #5de8c3;
+  --color-viconia-400: #ca8a04;
+  --color-viconia-500: #ca8a04;
+  --color-viconia-600: #ca8a04;
+  --color-viconia-700: #0b7560;
+  --color-viconia-800: #ffd760;
+  --color-viconia-900: #0e4d41;
+  --color-viconia-950: #f2bf09;
+
+  /* Border radius */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.5s ease-out;
+}
+
+/* Keyframes */
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Container utility — replaces tailwind.config container plugin */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+/* Base CSS variables */
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -64,7 +64,7 @@ export function Footer({ locale }: FooterProps) {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
             <div className='w-60 '>
-            <Image src={Logo} alt="ViconiaCare Logo" width={320}className=' bg-stone-300'/>
+            <Image src={Logo} alt="ViconiaCare Logo" width={320}className=' bg-stone-300 bg-rounded-40'/>
             </div>
             </Link>
             <p className="text-sm text-gray-400 mb-6 leading-relaxed">
@@ -116,7 +116,7 @@ export function Footer({ locale }: FooterProps) {
           {/* Columns */}
           {FOOTER_COLUMNS.map((col) => (
             <div key={col.heading}>
-              <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+              <h3 className="text-yellow-500 font-semibold mb-4 text-sm uppercase tracking-wider">
                 {col.heading}
               </h3>
               <ul className="space-y-2.5">
@@ -124,7 +124,7 @@ export function Footer({ locale }: FooterProps) {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-400 hover:text-viconia-400 transition-colors"
+                      className="text-sm text-gray-400 hover:text-yellow-500 transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -157,8 +157,8 @@ export function Footer({ locale }: FooterProps) {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-500">
-            © {year} ViconiaCare GmbH. Alle Rechte vorbehalten.
+          <p className="text-xs text-gray-400">
+            © {year} ViconiaCare GmbH &  <span className="text-lime-200 font-black"> MEDICUS DESIGN</span> Basel 🇨🇭 <div className=""></div>Alle Rechte vorbehalten.
           </p>
           <nav className="flex flex-wrap gap-x-4 gap-y-1 justify-center">
             {LEGAL_LINKS.map((l) => (

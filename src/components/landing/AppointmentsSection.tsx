@@ -48,7 +48,7 @@ const APPOINTMENTS = [
     step: '02',
     stepLabel: 'Schritt 2',
     icon: ClipboardList,
-    accentClass: 'bg-yellow-400',
+    accentClass: 'bg-red-400',
     borderClass: 'border-t-yellow-400',
     badgeClass: 'bg-yellow-400/20 text-yellow-300 border-yellow-400/30',
     title: 'Bedarfsanalyse-Interview',
@@ -124,7 +124,7 @@ export function AppointmentsSection() {
                 initial={{ opacity: 0, y: 36 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.12 }}
-                className={`group relative flex flex-col rounded-2xl border-t-4 ${appt.borderClass} bg-white/[0.07] backdrop-blur-md border border-white/10 p-8 transition-all duration-300 hover:bg-white/[0.12] hover:shadow-2xl hover:shadow-black/30 hover:-translate-y-1 ${appt.featured ? 'ring-1 ring-yellow-400/30' : ''}`}
+                className={`group relative flex flex-col rounded-2xl border-t-4 ${appt.borderClass} bg-white/[0.07] backdrop-blur-md border border-white/10 p-8 transition-all duration-300 hover:bg-white/20 hover:shadow-2xl hover:shadow-black/30 hover:-translate-y-1 ${appt.featured ? 'ring-1 ring-yellow-400/30' : ''}`}
               >
                 {/* Featured badge */}
                 {appt.featured && (
