@@ -34,7 +34,7 @@ export function HeroSection() {
 
       {/* Logo – mobile/tablet only, top-right, uppermost layer */}
       <div className="lg:hidden absolute p-8 top-6 right-4 z-20 rounded-xl pointer-events-none bg-stone-200">
-        <Image src={Logo} alt="ViconiaCare Logo" width={160} height={60} className="w-32 sm:w-44 object-contain" />
+        <Image src={Logo} alt="ViconiaCare Logo" width={160} height={60} className="w-96 sm:w-96 object-contain" />
       </div>
 
       <div className="container relative z-10">
@@ -47,8 +47,8 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
             className="text-white"
           >
-            <div className='flex flex-row justify-between relative lg:top-[-2vw] lg:right-[4vw] ' >
-                <Image src={Graffity} alt="Graffity" width={800} height={300} className='relative z-10 size-36 w-[40vw] left-2 sm:size-60 lg:w-[50vw] rotate-[-15deg] sm:-top-30 md:w-[50vw]  md:-top-32 lg:-top-20 lg:left-[-12vw]'  />
+            <div className=' flex flex-row justify-between relative -top-20 lg:top-[-2vw] lg:right-[4vw] ' >
+                <Image id="graffity"src={Graffity} alt="Graffity" width={800} height={300} className='relative size-36 w-[40vw] left-2 sm:size-60 lg:w-[50vw] rotate-[-15deg] sm:-top-30 md:w-[50vw]  md:-top-32 lg:-top-20 lg:left-[-12vw] z-20'  />
                  <Image src={CTA} alt="Termin Button" width={400} height={300} className=' relative z-10 size-24 top-[6vh] sm:size-36 lg:size-80 rotate-[-15deg] sm:-top-20 md:top-20 lg:left-[-12vw] lg:-top-24'  />
             </div>
             <Badge className="mb-6 bg-viconia-500/20 text-[#252928] border border-viconia-400/30 backdrop-blur-sm">
