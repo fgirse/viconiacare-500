@@ -34,11 +34,10 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import {
-  Heart, Users, Phone, Calendar, MapPin, FileText,
-  Shield, ChevronDown, Globe, Menu, LayoutDashboard,
-  LogIn, Settings, HeartPulse, Home, ClipboardList,
-  Star, MessageSquare, Activity
+  Heart, Users, Phone, Home,
+  ChevronDown, Menu, LayoutDashboard, LogIn,
 } from 'lucide-react'
+import * as LucideIcons from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { routing } from '@/i18n/routing'
 import Image from 'next/image'
@@ -90,15 +89,11 @@ export type CmsNavData = {
   } | null
 }
 
-// ─── Lucide icon string → component map ──────────────────────────────────────
-const ICON_MAP: Record<string, React.ElementType> = {
-  Heart, Users, Phone, Calendar, MapPin, FileText, Shield,
-  Globe, LayoutDashboard, LogIn, Settings, HeartPulse, Home,
-  ClipboardList, Star, MessageSquare, Activity,
-}
-
+// ─── Lucide icon string → component (dynamic, covers all lucide-react icons) ──
 function resolveIcon(name?: string | null, fallback: React.ElementType = Heart): React.ElementType {
-  return name && ICON_MAP[name] ? ICON_MAP[name] : fallback
+  if (!name) return fallback
+  const icon = (LucideIcons as Record<string, unknown>)[name]
+  return typeof icon === 'function' ? (icon as React.ElementType) : fallback
 }
 
 // ─── Static nav fallback (used when CMS is unreachable) ─────────────────────
@@ -154,8 +149,8 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none',
-            'transition-colors hover:bg-viconia-50 hover:text-viconia-900',
-            'focus:bg-viconia-50 focus:text-viconia-900',
+            'transition-colors hover:bg-amber-50 hover:text-viconia-900',
+            'focus:bg-amber-50 focus:text-viconia-900',
             className
           )}
           {...props}
@@ -181,7 +176,7 @@ ListItem.displayName = 'ListItem'
 function SubItemGroup({ item }: { item: ResolvedSubItem }) {
   const Icon = item.icon
   return (
-    <li className="rounded-md p-3 hover:bg-viconia-50 transition-colors">
+    <li className="rounded-md p-3 hover:bg-amber-50 transition-colors">
       <Link
         href={item.href}
         className="flex items-center gap-2 text-sm font-medium leading-none hover:text-viconia-900"
@@ -200,7 +195,7 @@ function SubItemGroup({ item }: { item: ResolvedSubItem }) {
               <li key={`ss-${ssIdx}-${ss.href}`}>
                 <Link
                   href={ss.href}
-                  className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-viconia-700"
+                  className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-gray-700"
                 >
                   <SSIcon className="h-3 w-3 shrink-0" />
                   {ss.label}
@@ -247,7 +242,7 @@ function LanguageSwitcher({ locale }: { locale: string }) {
           <DropdownMenuItem
             key={lang.code}
             onClick={() => switchLocale(lang.code)}
-            className={cn('gap-2 cursor-pointer', lang.code === locale && 'bg-viconia-50 font-medium')}
+            className={cn('gap-2 cursor-pointer', lang.code === locale && 'bg-amber-50 font-medium')}
           >
             <span className="text-base">{lang.flag}</span>
             <span>{lang.label}</span>
@@ -277,7 +272,7 @@ function MobileNav({
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden">
+        <Button variant="ghost" size="icon" className="lg:hidden">
           <Menu className="h-5 w-5" />
           <span className="sr-only">Menü öffnen</span>
         </Button>
@@ -296,7 +291,7 @@ function MobileNav({
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium uppercase hover:bg-viconia-50 hover:text-viconia-700 transition-colors"
+                      className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium uppercase hover:bg-amber-50 hover:text-gray-700 transition-colors"
                     >
                       <item.icon className="h-4 w-4 text-yellow-600 shrink-0" />
                       {item.label}
@@ -310,7 +305,7 @@ function MobileNav({
                   value={`item-${iIdx}`}
                   className="border-none"
                 >
-                  <AccordionTrigger className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium uppercase hover:bg-viconia-50 hover:text-viconia-700 hover:no-underline transition-colors [&>svg]:ml-auto [&>svg]:shrink-0">
+                  <AccordionTrigger className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium uppercase hover:bg-amber-50 hover:text-gray-700 hover:no-underline transition-colors [&>svg]:ml-auto [&>svg]:shrink-0">
                     <item.icon className="h-4 w-4 text-yellow-600 shrink-0" />
                     {item.label}
                   </AccordionTrigger>
@@ -321,7 +316,7 @@ function MobileNav({
                           <Link
                             href={sub.href}
                             onClick={() => setOpen(false)}
-                            className="flex items-center gap-2 rounded-md px-3 py-1.5 text-xs uppercase text-muted-foreground hover:text-viconia-700 hover:bg-viconia-50 transition-colors"
+                            className="flex items-center gap-2 rounded-md px-3 py-1.5 text-xs uppercase text-muted-foreground hover:text-gray-700 hover:bg-amber-50 transition-colors"
                           >
                             <sub.icon className="h-3 w-3 shrink-0" />
                             {sub.label}
@@ -331,7 +326,7 @@ function MobileNav({
                               key={`mobile-ss-${iIdx}-${sIdx}-${ssIdx}-${ss.href}`}
                               href={ss.href}
                               onClick={() => setOpen(false)}
-                              className="flex items-center gap-2 ml-4 rounded-md px-3 py-1 text-xs uppercase text-muted-foreground/70 hover:text-viconia-700 hover:bg-viconia-50 transition-colors"
+                              className="flex items-center gap-2 ml-4 rounded-md px-3 py-1 text-xs uppercase text-muted-foreground/70 hover:text-gray-700 hover:bg-amber-50 transition-colors"
                             >
                               <ss.icon className="h-2.5 w-2.5 shrink-0" />
                               {ss.label}
@@ -435,13 +430,13 @@ export function MainNavigation({ locale, navData }: MainNavigationProps) {
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
         scrolled
-          ? 'bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b shadow-sm'
+          ? 'bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/80 border-b shadow-sm'
           : 'bg-transparent'
       )}
     >
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-viconia-700">
+        <Link href="/" className="flex items-center gap-2 font-bold text-gray-700">
           {logoUrl ? (
             <Image src={logoUrl} alt={logoAlt} width={logoW} height={logoH} className="h-9 w-auto" />
           ) : (
@@ -450,7 +445,7 @@ export function MainNavigation({ locale, navData }: MainNavigationProps) {
         </Link>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex">
+        <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
             {resolvedItems.map((item, idx) => {
               const hasSubItems = (item.subItems?.length ?? 0) > 0
@@ -471,12 +466,12 @@ export function MainNavigation({ locale, navData }: MainNavigationProps) {
                   <NavigationMenuItem key={`nav-${idx}-${item.href}`}>
                     <NavigationMenuTrigger className="uppercase text-sm">{item.label}</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[420px] gap-2 p-4 md:grid-cols-2">
+                      <ul className="grid w-105 gap-2 p-4 md:grid-cols-2">
                         <li className="row-span-2">
                           <NavigationMenuLink asChild>
                             <Link
                               href={item.href}
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-yellow-300 to-yellow-500 p-6 no-underline outline-none focus:shadow-md"
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-yellow-300 to-yellow-500 p-6 no-underline outline-none focus:shadow-md"
                             >
                               <item.icon className="h-6 w-6 text-white" />
                               <div className="mb-2 mt-4 text-lg font-medium text-white">{item.label}</div>
@@ -510,7 +505,7 @@ export function MainNavigation({ locale, navData }: MainNavigationProps) {
                 <NavigationMenuItem key={`nav-${idx}-${item.href}`}>
                   <NavigationMenuTrigger className="uppercase text-sm">{item.label}</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[300px] gap-2 p-4">
+                    <ul className="grid w-75 gap-2 p-4">
                       {item.subItems!.map((sub, sIdx) =>
                         (sub.subSubItems?.length ?? 0) > 0 ? (
                           <SubItemGroup key={`nav-${idx}-sub-${sIdx}-${sub.href}`} item={sub} />
@@ -536,14 +531,14 @@ export function MainNavigation({ locale, navData }: MainNavigationProps) {
         <div className="flex items-center gap-2">
           <LanguageSwitcher locale={locale} />
 
-          <Button asChild variant="outline" size="sm" className="hidden sm:flex gap-1.5">
+          <Button asChild variant="outline" size="sm" className="hidden lg:flex gap-1.5">
             <Link href={adminHref}>
               <LayoutDashboard className="h-3.5 w-3.5" />
               {adminLabel}
             </Link>
           </Button>
 
-          <Button asChild size="sm" className="hidden sm:flex gap-1.5">
+          <Button asChild size="sm" className="hidden lg:flex gap-1.5">
             <Link href={loginHref}>
               <LogIn className="h-3.5 w-3.5" />
               {loginLabel}

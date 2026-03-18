@@ -57,7 +57,7 @@ export const Gallery27Carousel = ({ members, className }: Gallery27CarouselProps
                     <img
                       src={member.src}
                       alt={member.title}
-                      className="h-92 w-full object-cover transition-all duration-300 group-hover:translate-y-[-10px]"
+                      className="h-92 w-full object-cover transition-all duration-300 group-hover:-translate-y-2.5"
                     />
                   ) : (
                     <div className="h-92 w-full bg-stone-300 flex items-center justify-center text-4xl font-bold text-stone-500">
