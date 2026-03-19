@@ -22,7 +22,7 @@ export function ProcessSection() {
   return (
     <section
       id="ablauf"
-      className="relative py-24 overflow-hidden bg-teal-700/70"
+      className="relative py-24 overflow-hidden bg-[#e4f4f6]"
       ref={ref}
     >
       {/* Subtle radial glows */}
@@ -55,11 +55,11 @@ export function ProcessSection() {
               In 4 Schritten
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-600 mb-4 leading-tight">
               {t('heading')}
             </h2>
 
-            <p className="text-lg text-white/55 max-w-2xl mx-auto">
+            <p className="text-lg text-stone-600 max-w-2xl mx-auto">
               {t('subheading')}
             </p>
           </m.div>
@@ -146,10 +146,10 @@ export function ProcessSection() {
                       </div>
 
                       {/* Content */}
-                      <h3 className="font-bold text-white text-lg mb-2 leading-snug">
+                      <h3 className="font-bold text-yellow-700 text-lg mb-2 leading-snug">
                         {t(`steps.${step.key}.title` as any)}
                       </h3>
-                      <p className="text-sm text-white/55 leading-relaxed flex-1">
+                      <p className="text-sm text-stone-600 leading-relaxed flex-1">
                         {t(`steps.${step.key}.description` as any)}
                       </p>
 
