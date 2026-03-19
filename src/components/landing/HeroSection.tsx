@@ -47,12 +47,12 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
             className="text-white"
           >
-            <div className='mb-2 flex flex-row justify-between relative -top-16
+            <div className='mb-20 flex flex-col lg:flex-row justify-between relative -top-1
           
 lg:top-[-2vw] lg:right-[4vw] ' >
-                <Image id="graffity"src={Graffity} alt="Graffity" width={800} height={300} className='relative size-32 w-[30vw] top-12 -left-8 sm:size-60  rotate-[-15deg] sm:-top-30 md:w-[50vw]  md:-top-32 lg:-top-20 lg:left-[-12vw] z-40 lg:w-[50vw]' />
+                <Image id="graffity"src={Graffity} alt="Graffity" width={800} height={300} className='relative size-32 w-[50vw] top-12 -left-8 sm:size-72  rotate-[-15deg] sm:top-20 sm:w-[50vw] md:w-[30vh]  md:top-10 lg:-top-20 lg:left-[-12vw] z-40 lg:size[60vw]' />
                  <Link href="/termine" className="relative z-40">
-                 <Image src={CTA} alt="Termin Button" width={400} height={300} className=' relative z-40 size-44 top-[50vh] sm:size-36 lg:size-80 rotate-[-15deg] sm:-top-20 md:top-60 lg:left-[-12vw] lg:-top-24'  />
+                 <Image src={CTA} alt="Termin Button" width={400} height={300} className=' relative z-50 size-28 top-[6vh] left-1 sm:size-60 lg:size-80 rotate-[-15deg] sm:-top-[6vh] md:top-8 lg:left-[-12vw] lg:-top-24'  />
                   </Link>
             </div>
             <Badge className="mb-6 bg-viconia-500/20 text-[#252928] border border-viconia-400/30 backdrop-blur-sm">
