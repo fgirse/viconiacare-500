@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, Phone, Shield, Star, Heart } from 'lucide-react'
-import { LazyMotion, domAnimation, m } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export function HeroSection() {
   const t = useTranslations('hero')
@@ -17,15 +17,15 @@ export function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0 bg-[url('/Assets/SVG/Herobg.svg')] bg-cover bg-center opacity-10" />
+      <div className="absolute inset-0 bg-[url('/Assets/SVG/Herobg.svg')] bg-cover bg-center opacity-0" />
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-20">
-        <div
+        {/*<div
           className="absolute inset-0"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
-        />
+        />*/}
       </div>
 
       {/* Decorative circles */}
@@ -40,8 +40,7 @@ export function HeroSection() {
       <div className="container relative z-10">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           {/* Text content */}
-          <LazyMotion features={domAnimation}>
-          <m.div
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -50,10 +49,7 @@ export function HeroSection() {
             <div className='mb-20 flex flex-col lg:flex-row justify-between relative -top-1
           
 lg:top-[-2vw] lg:right-[4vw] ' >
-                <Image id="graffity"src={Graffity} alt="Graffity" width={800} height={300} className='relative size-32 w-[50vw] top-12 -left-8 sm:size-72  rotate-[-15deg] sm:top-20 sm:w-[50vw] md:w-[30vh]  md:top-10 lg:-top-20 lg:left-[-12vw] z-40 lg:size[60vw]' />
-                 <Link href="/termine" className="relative z-40">
-                 <Image src={CTA} alt="Termin Button" width={400} height={300} className=' relative z-50 size-28 top-[6vh] left-1 sm:size-60 lg:size-80 rotate-[-15deg] sm:-top-[6vh] md:top-8 lg:left-[-12vw] lg:-top-24'  />
-                  </Link>
+                
             </div>
             <Badge className="mb-6 bg-viconia-500/20 text-[#252928] border border-viconia-400/30 backdrop-blur-sm">
               <Shield className="h-3 w-3 mr-1" />
@@ -96,10 +92,10 @@ lg:top-[-2vw] lg:right-[4vw] ' >
                 </Link>
               </Button>
             </div>
-          </m.div>
+          </motion.div>
 
           {/* Card visual */}
-          <m.div
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -121,8 +117,7 @@ lg:top-[-2vw] lg:right-[4vw] ' >
                 <div className="text-gray-600 text-xs">Notfall-Erreichbarkeit</div>
               </div>
             </div>
-          </m.div>
-          </LazyMotion>
+          </motion.div>
         </div>
       </div>
 

@@ -1,75 +1,81 @@
-import { useTranslations } from 'next-intl'
-import { Card, CardContent } from '@/components/ui/card'
-import { Heart, HeartPulse, Users, Home, RefreshCw, Moon } from 'lucide-react'
+import {
+  Heart,
+  Stethoscope,
+  Home,
+  Users,
+  Brain,
+  HandHeart,
+  ShieldCheck,
+} from "lucide-react";
 
-const SERVICE_ITEMS = [
-  { key: 'grundpflege', icon: Heart, color: 'text-rose-500', bg: 'bg-rose-50' },
-  { key: 'behandlungspflege', icon: HeartPulse, color: 'text-blue-500', bg: 'bg-blue-50' },
-  { key: 'betreuung', icon: Users, color: 'text-violet-500', bg: 'bg-violet-50' },
-  { key: 'hauswirtschaft', icon: Home, color: 'text-amber-500', bg: 'bg-amber-50' },
-  { key: 'verhinderung', icon: RefreshCw, color: 'text-teal-500', bg: 'bg-teal-50' },
-  { key: 'nacht', icon: Moon, color: 'text-indigo-500', bg: 'bg-indigo-50' },
-] as const
+const services = [
+  {
+    icon: Heart,
+    title: "Grundpflege",
+    desc: "Körperpflege, Ernährung und Mobilität – wir unterstützen bei den täglichen Grundbedürfnissen.",
+  },
+  {
+    icon: Stethoscope,
+    title: "Behandlungspflege",
+    desc: "Medizinische Versorgung nach ärztlicher Verordnung: Wundversorgung, Injektionen und mehr.",
+  },
+  {
+    icon: Home,
+    title: "Hauswirtschaft",
+    desc: "Einkaufen, Kochen, Reinigung – wir sorgen für ein gepflegtes Zuhause.",
+  },
+  {
+    icon: Users,
+    title: "Begleitung",
+    desc: "Arztbesuche, Spaziergänge und soziale Teilhabe für mehr Lebensqualität.",
+  },
+  {
+    icon: Brain,
+    title: "Demenzbetreuung",
+    desc: "Einfühlsame Betreuung für Menschen mit Demenz – mit Geduld und Verständnis.",
+  },
+  {
+    icon: HandHeart,
+    title: "Palliativpflege",
+    desc: "Würdevolle Begleitung in der letzten Lebensphase für Betroffene und Angehörige.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Verhinderungspflege",
+    desc: "Vertretung pflegender Angehöriger bei Urlaub, Krankheit oder sonstiger Verhinderung.",
+  },
+];
 
-export function ServicesSection() {
-  const t = useTranslations('services')
-
+const ServicesSection = () => {
   return (
-    <section id="leistungen" className="py-24 bg-background">
-      <div className="container">
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <span className="text-viconia-600 text-sm font-semibold uppercase tracking-wider mb-2 inline-block">
-            SGB XI &amp; SGB V
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            {t('heading')}
+    <section id="leistungen" className="section-padding section-alt mb-24">
+      <div className="container mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-sm font-semibold text-accent uppercase tracking-widest">Unsere Leistungen</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4 text-foreground">
+            Umfassende Pflege & Betreuung
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t('subheading')}
+          <p className="text-muted-foreground text-lg">
+            Individuell auf Ihre Bedürfnisse abgestimmt – von der Grundpflege bis zur palliativen Versorgung.
           </p>
         </div>
-
-        {/* Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICE_ITEMS.map(({ key, icon: Icon, color, bg }) => (
-            <Card
-              key={key}
-              className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-sm"
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {services.map((s) => (
+            <div
+              key={s.title}
+              className="bg-card rounded-xl p-6 shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
             >
-              <CardContent className="p-6">
-                <div className={`inline-flex items-center justify-center h-12 w-12 rounded-xl ${bg} mb-4`}>
-                  <Icon className={`h-6 w-6 ${color}`} />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {t(`items.${key}.title` as any)}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {t(`items.${key}.description` as any)}
-                </p>
-              </CardContent>
-            </Card>
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <s.icon className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-heading text-lg font-bold mb-2 text-foreground">{s.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+            </div>
           ))}
-        </div>
-
-        {/* SGB Info */}
-        <div className="mt-16 grid md:grid-cols-2 gap-6">
-          <div className="rounded-2xl bg-viconia-50 border border-viconia-100 p-6">
-            <h3 className="font-bold text-viconia-900 mb-2">SGB XI – Pflegeversicherung</h3>
-            <p className="text-sm text-viconia-800">
-              Häusliche Pflegeleistungen für Versicherte mit Pflegegrad 1–5. Wir rechnen direkt
-              mit Ihrer Pflegekasse ab – Sie haben keinen Aufwand.
-            </p>
-          </div>
-          <div className="rounded-2xl bg-blue-50 border border-blue-100 p-6">
-            <h3 className="font-bold text-blue-900 mb-2">SGB V – Häusliche Krankenpflege (HKP)</h3>
-            <p className="text-sm text-blue-800">
-              Ärztlich verordnete Behandlungspflege – z.B. Wundversorgung, Injektionen,
-              Medikamentengabe. Verordnung durch Ihren Hausarzt reicht aus.
-            </p>
-          </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default ServicesSection;
