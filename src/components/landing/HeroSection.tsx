@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import Graffity from '../../../public/Assets/Images/Graffity03.png';
 import CTA from '../../../public/Assets/SVG/kalenderbutton.svg';
 import Logo from '../../../public/Assets/SVG/ViconiaLogoQueroBG.svg';
@@ -13,11 +14,13 @@ import { motion } from 'framer-motion'
 
 export function HeroSection() {
   const t = useTranslations('hero')
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0 bg-[url('/Assets/SVG/Herobg.svg')] bg-cover bg-center opacity-0" />
+      <div className="absolute inset-0 bg-[#e4f4f6]" />
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-20">
         {/*<div
@@ -33,15 +36,15 @@ export function HeroSection() {
       <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-viconia-400/20 blur-3xl" />
 
       {/* Logo – mobile/tablet only, top-right, uppermost layer */}
-      <div className="lg:hidden absolute p-8 top-6 right-4 rounded-xl pointer-events-none bg-stone-200">
+      {/*<div className="lg:hidden absolute p-8 top-6 right-4 rounded-xl pointer-events-none bg-stone-200">
         <Image src={Logo} alt="ViconiaCare Logo" width={160} height={60} className="w-48 sm:w-96 object-contain" />
-      </div>
+      </div>*/}
 
       <div className="container relative z-10">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           {/* Text content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={mounted ? { opacity: 0, y: 20 } : false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-white"
@@ -96,7 +99,7 @@ lg:top-[-2vw] lg:right-[4vw] ' >
 
           {/* Card visual */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={mounted ? { opacity: 0, scale: 0.95 } : false}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="hidden lg:block"

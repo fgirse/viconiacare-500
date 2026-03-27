@@ -12,7 +12,7 @@ const HeroSection5 = () => {
         className='object-cover opacity-10'
       />
       <div className='flex flex-col items-center '>
-        <Image src={HeroImage} alt="Hero Section 5" className='lg:p-96 size-[80vw] relative top-[-7vh]'/>
+        <Image src={HeroImage} alt="Hero Section 5" className='lg:p-96 size-[80vw] relative top-[-20vh]'/>
       </div>
      
 
