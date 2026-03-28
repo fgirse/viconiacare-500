@@ -1,7 +1,7 @@
 import Intro from '@/components/landing/HeroSection5';
 
 
-import  {HeroSection} from '@/components/landing/HeroSection';
+import  HeroSection6 from '@/components/landing/HeroSection6';
 import ServicesSection  from '@/components/landing/ServicesSection';
 import HowItWorksSection from '@/components/landing/HowItWorks';
 import { Gallery27 }   from '@/components/gallery27';
@@ -17,7 +17,7 @@ export default async function LandingPage() {
     <>    
 
     <Intro/>
-      <HeroSection />
+      <HeroSection6 />
       <ServicesSection />
       <HowItWorksSection />
       <AppointmentsSection />
