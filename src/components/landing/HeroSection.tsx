@@ -1,21 +1,23 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
-import Graffity from '../../../public/Assets/Images/Graffity03.png';
-import CTA from '../../../public/Assets/SVG/kalenderbutton.svg';
-import Logo from '../../../public/Assets/SVG/ViconiaLogoQueroBG.svg';
-import { useTranslations } from 'next-intl'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { ArrowRight, Phone, Shield, Star, Heart } from 'lucide-react'
-import { motion } from 'framer-motion'
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import Graffity from "../../../public/Assets/Images/Graffity03.png";
+import CTA from "../../../public/Assets/SVG/kalenderbutton.svg";
+import Logo from "../../../public/Assets/SVG/ViconiaLogoQueroBG.svg";
+import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Phone, Shield, Star, Heart } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
-  const t = useTranslations('hero')
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => { setMounted(true) }, [])
+  const t = useTranslations("hero");
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
@@ -49,48 +51,61 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
             className="text-white"
           >
-            <div className='mb-20 flex flex-col lg:flex-row justify-between relative -top-1
+            <div
+              className="mb-20 flex flex-col lg:flex-row justify-between relative -top-1
           
-lg:top-[-2vw] lg:right-[4vw] ' >
-                
-            </div>
+lg:top-[-2vw] lg:right-[4vw] "
+            ></div>
             <Badge className="mb-6 bg-viconia-500/20 text-[#252928] border border-viconia-400/30 backdrop-blur-sm">
               <Shield className="h-3 w-3 mr-1" />
-              {t('badge')}
+              {t("badge")}
             </Badge>
-          
+
             <h1 className="text-yellow-400 text-4xl sm:text-5xl xl:text-6xl font-black leading-tight mb-6">
-              {t('headline')}
+              {t("headline")}
             </h1>
 
             <p className="text-lg sm:text-xl text-[#252928] leading-relaxed mb-8 max-w-lg">
-              {t('subline')}
+              {t("subline")}
             </p>
 
             {/* Stats */}
             <div className="z-50 *:flex flex-wrap gap-8 mb-10">
               {[
-                { value: '500+', label: 'Patienten betreut' },
-                { value: '98%', label: 'Weiterempfehlung' },
-                { value: '10+', label: 'Jahre Erfahrung' },
+                { value: "500+", label: "Patienten betreut" },
+                { value: "98%", label: "Weiterempfehlung" },
+                { value: "10+", label: "Jahre Erfahrung" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-3xl font-bold text-yellow-400">{stat.value}</div>
-                  <div className="text-base py-1 px-2 font-black text-[#252928] mt-0.5">{stat.label}</div>
+                  <div className="text-3xl font-bold text-yellow-400">
+                    {stat.value}
+                  </div>
+                  <div className="text-base py-1 px-2 font-black text-[#252928] mt-0.5">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" asChild className="bg-yellow-600 text-[#252928] hover:bg-yellow-400/50 shadow-lg">
+              <Button
+                size="lg"
+                asChild
+                className="bg-yellow-600 text-[#252928] hover:bg-yellow-400/50 shadow-lg"
+              >
                 <Link href="/termine">
                   <Phone className="h-5 w-5" />
-                  {t('cta_primary')}
+                  {t("cta_primary")}
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-teal/90 text-[#252928] hover:bg-yellow-400/50 backdrop-blur-sm">
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="border-teal/90 text-[#252928] hover:bg-yellow-400/50 backdrop-blur-sm"
+              >
                 <Link href="/#leistungen">
-                  {t('cta_secondary')}
+                  {t("cta_secondary")}
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
@@ -106,8 +121,14 @@ lg:top-[-2vw] lg:right-[4vw] ' >
           >
             <div className="relative">
               {/* Main card */}
-              <div className='flex flex-col z-10 items-center justify-center'>
-             <Image src={Logo} alt="Hero Card" width={400} height={300} className="size-36 px-5 py-5 rounded-xl shadow-xl sm:size-60 lg:w-full lg:h-full object-cover bg-stone-200" />
+              <div className="flex flex-col z-10 items-center justify-center">
+                <Image
+                  src={Logo}
+                  alt="Hero Card"
+                  width={400}
+                  height={300}
+                  className="size-36 px-5 py-5 rounded-xl shadow-xl sm:size-60 lg:w-full lg:h-full object-cover bg-stone-200"
+                />
               </div>
               {/* Floating badge */}
               <div className="absolute -top-4 -right-4 bg-viconia-500 text-white rounded-xl px-4 py-2 shadow-lg text-sm font-semibold">
@@ -117,7 +138,9 @@ lg:top-[-2vw] lg:right-[4vw] ' >
               {/* Stats card */}
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl">
                 <div className="text-viconia-800 font-bold text-2xl">24/7</div>
-                <div className="text-gray-600 text-xs">Notfall-Erreichbarkeit</div>
+                <div className="text-gray-600 text-xs">
+                  Notfall-Erreichbarkeit
+                </div>
               </div>
             </div>
           </motion.div>
@@ -126,10 +149,14 @@ lg:top-[-2vw] lg:right-[4vw] ' >
 
       {/* Wave bottom */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" className="w-full fill-background">
+        <svg
+          viewBox="0 0 1440 60"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full fill-background"
+        >
           <path d="M0,60 C240,0 480,60 720,30 C960,0 1200,60 1440,30 L1440,60 Z" />
         </svg>
       </div>
     </section>
-  )
+  );
 }

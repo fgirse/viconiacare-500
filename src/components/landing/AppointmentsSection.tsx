@@ -68,22 +68,22 @@ export function AppointmentsSection() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="termine" className="relative py-28 overflow-hidden bg-stone-500" ref={ref}>
+    <section id="termine" className="relative py-28 overflow-hidden bg-[#e4e6f4]" ref={ref}>
       {/* Ambient glow */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(ellipse 55% 55% at 15% 45%, rgba(254,204,0,0.07) 0%, transparent 70%), ' +
-            'radial-gradient(ellipse 55% 55% at 85% 55%, rgba(254,204,0,0.05) 0%, transparent 70%)',
+            'radial-gradient(ellipse 55% 55% at 15% 45%, rgba(13,148,136,0.09) 0%, transparent 70%), ' +
+            'radial-gradient(ellipse 55% 55% at 85% 55%, rgba(13,148,136,0.06) 0%, transparent 70%)',
         }}
       />
       {/* Dot-grid texture */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1.2' fill='%23ffffff'/%3E%3C/svg%3E\")",
+            "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1.2' fill='%231c1917'/%3E%3C/svg%3E\")",
         }}
       />
 
@@ -100,22 +100,22 @@ export function AppointmentsSection() {
             <span
               className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] mb-4 px-4 py-1.5 rounded-full"
               style={{
-                color: '#fecc00',
-                background: 'rgba(254,204,0,0.1)',
-                border: '1px solid rgba(254,204,0,0.25)',
+                color: '#0f766e',
+                background: 'rgba(13,148,136,0.12)',
+                border: '1px solid rgba(13,148,136,0.30)',
               }}
             >
               <span
                 className="h-1.5 w-1.5 rounded-full animate-pulse"
-                style={{ backgroundColor: '#fecc00' }}
+                style={{ backgroundColor: '#0d9488' }}
               />
               Kostenlos &amp; Unverbindlich
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-800 mb-5 leading-tight">
               {t('heading')}
             </h2>
-            <p className="text-lg text-white/55 max-w-xl mx-auto leading-relaxed">
+            <p className="text-lg text-stone-600 max-w-xl mx-auto leading-relaxed">
               {t('subheading')}
             </p>
           </m.div>
@@ -136,8 +136,8 @@ export function AppointmentsSection() {
                   {appt.featured && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
                       <span
-                        className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider shadow-lg"
-                        style={{ backgroundColor: '#fecc00', color: '#0c0c0c' }}
+                        className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider shadow-md"
+                        style={{ backgroundColor: '#0d9488', color: '#ffffff' }}
                       >
                         <Sparkles className="h-3 w-3" />
                         Empfohlen
@@ -149,12 +149,14 @@ export function AppointmentsSection() {
                   <div
                     className="h-full flex flex-col rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1"
                     style={{
-                      background: appt.featured ? 'rgba(254,204,0,0.05)' : 'rgba(255,255,255,0.04)',
+                      background: appt.featured ? 'rgba(13,148,136,0.07)' : 'rgba(255,255,255,0.6)',
                       border: appt.featured
-                        ? '1px solid rgba(254,204,0,0.3)'
-                        : '1px solid rgba(255,255,255,0.08)',
-                      borderTop: appt.featured ? '4px solid #fecc00' : undefined,
-                      boxShadow: appt.featured ? '0 0 40px rgba(254,204,0,0.07)' : 'none',
+                        ? '1px solid rgba(13,148,136,0.30)'
+                        : '1px solid rgba(0,0,0,0.07)',
+                      borderTop: appt.featured ? '4px solid #0d9488' : undefined,
+                      boxShadow: appt.featured
+                        ? '0 0 40px rgba(13,148,136,0.08)'
+                        : '0 2px 12px rgba(0,0,0,0.04)',
                     }}
                   >
                     {/* Step label + Icon */}
@@ -162,26 +164,26 @@ export function AppointmentsSection() {
                       <span
                         className="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold"
                         style={{
-                          color: '#fecc00',
-                          background: 'rgba(254,204,0,0.1)',
-                          border: '1px solid rgba(254,204,0,0.2)',
+                          color: '#0f766e',
+                          background: 'rgba(13,148,136,0.12)',
+                          border: '1px solid rgba(13,148,136,0.25)',
                         }}
                       >
                         {appt.stepLabel}
                       </span>
                       <div
                         className="h-12 w-12 rounded-xl flex items-center justify-center shadow-md"
-                        style={{ backgroundColor: '#fecc00' }}
+                        style={{ backgroundColor: '#0d9488' }}
                       >
-                        <Icon className="h-5 w-5 text-stone-950" />
+                        <Icon className="h-5 w-5 text-white" />
                       </div>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-white mb-3">{appt.title}</h3>
+                    <h3 className="text-xl font-bold text-stone-800 mb-3">{appt.title}</h3>
 
                     {/* Description */}
-                    <p className="text-sm text-white/55 leading-relaxed mb-6 flex-1">
+                    <p className="text-sm text-stone-600 leading-relaxed mb-6 flex-1">
                       {appt.description}
                     </p>
 
@@ -190,13 +192,13 @@ export function AppointmentsSection() {
                       {appt.meta.map(({ icon: MetaIcon, label }) => (
                         <span
                           key={label}
-                          className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs text-white/60"
+                          className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs text-stone-600"
                           style={{
-                            background: 'rgba(255,255,255,0.06)',
-                            border: '1px solid rgba(255,255,255,0.09)',
+                            background: 'rgba(0,0,0,0.05)',
+                            border: '1px solid rgba(0,0,0,0.08)',
                           }}
                         >
-                          <MetaIcon className="h-3 w-3 shrink-0" style={{ color: '#fecc00' }} />
+                          <MetaIcon className="h-3 w-3 shrink-0" style={{ color: '#0d9488' }} />
                           {label}
                         </span>
                       ))}
@@ -208,11 +210,11 @@ export function AppointmentsSection() {
                       className="w-full gap-2 font-semibold hover:opacity-90 transition-opacity"
                       style={
                         appt.featured
-                          ? { backgroundColor: '#fecc00', color: '#0c0c0c', border: 'none' }
+                          ? { backgroundColor: '#0d9488', color: '#ffffff', border: 'none' }
                           : {
-                              background: 'rgba(254,204,0,0.08)',
-                              color: '#fecc00',
-                              border: '1px solid rgba(254,204,0,0.28)',
+                              background: 'rgba(13,148,136,0.12)',
+                              color: '#0f766e',
+                              border: '1px solid rgba(13,148,136,0.30)',
                             }
                       }
                     >
@@ -237,8 +239,8 @@ export function AppointmentsSection() {
           >
             <div className="flex items-center justify-center gap-8 sm:gap-12 flex-wrap">
               {TRUST_ITEMS.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 text-sm text-white/50">
-                  <Icon className="h-4 w-4 shrink-0" style={{ color: '#fecc00' }} />
+                <div key={label} className="flex items-center gap-2 text-sm text-stone-600">
+                  <Icon className="h-4 w-4 shrink-0" style={{ color: '#0d9488' }} />
                   <span>{label}</span>
                 </div>
               ))}
@@ -252,20 +254,20 @@ export function AppointmentsSection() {
             transition={{ duration: 0.5, delay: 0.58 }}
             className="mt-8 text-center"
           >
-            <p className="text-white/35 text-sm mb-3">Lieber direkt anrufen?</p>
+            <p className="text-stone-500 text-sm mb-3">Lieber direkt anrufen?</p>
             <Button
               asChild
               variant="ghost"
-              className="text-white hover:text-white hover:bg-white/8 gap-2"
-              style={{ border: '1px solid rgba(255,255,255,0.09)' }}
+              className="text-stone-800 hover:text-stone-900 hover:bg-stone-800/8 gap-2"
+              style={{ border: '1px solid rgba(0,0,0,0.10)' }}
             >
               <a href="tel:+4930123456789">
-                <PhoneCall className="h-4 w-4" style={{ color: '#fecc00' }} />
+                <PhoneCall className="h-4 w-4" style={{ color: '#0d9488' }} />
                 +49 30 123 456 789
                 <ArrowRight className="h-3.5 w-3.5 opacity-50" />
               </a>
             </Button>
-            <p className="text-white/25 text-xs mt-3">Notfall: 24/7 erreichbar</p>
+            <p className="text-stone-400 text-xs mt-3">Notfall: 24/7 erreichbar</p>
           </m.div>
 
         </LazyMotion>
