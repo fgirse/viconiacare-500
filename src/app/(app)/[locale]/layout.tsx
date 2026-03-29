@@ -54,7 +54,12 @@ export default async function LocaleLayout({ children, params }: Props) {
       locale: locale as any,
       depth: 1,
     }) as unknown as CmsNavData
-  } catch {
+    // DEBUG – remove after confirming icons work
+    console.log('[NAV DEBUG] items icons:', JSON.stringify(
+      navData?.items?.map(i => ({ label: i.label, icon: i.icon, subs: i.subItems?.map(s => ({ label: s.label, icon: s.icon })) }))
+    ))
+  } catch (e) {
+    console.error('[NAV DEBUG] fetch failed:', e)
     // silently fall back to static nav
   }
 

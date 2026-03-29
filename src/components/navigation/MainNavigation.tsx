@@ -34,10 +34,11 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import {
-  Heart, Users, Phone, Home,
+  Heart, Users, Phone, Home, Circle,
   ChevronDown, Menu, LayoutDashboard, LogIn,
+  Amphora, Rose, Bath, Umbrella, Brain, Bird, Info, Mail, MapPin, CircleHelp,
+  House as HouseIcon,
 } from 'lucide-react'
-import * as LucideIcons from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { routing } from '@/i18n/routing'
 import Image from 'next/image'
@@ -89,11 +90,33 @@ export type CmsNavData = {
   } | null
 }
 
-// ─── Lucide icon string → component (dynamic, covers all lucide-react icons) ──
-function resolveIcon(name?: string | null, fallback: React.ElementType = Heart): React.ElementType {
-  if (!name) return fallback
-  const icon = (LucideIcons as Record<string, unknown>)[name]
-  return typeof icon === 'function' ? (icon as React.ElementType) : fallback
+// ─── Static icon map: CMS icon name (lowercase) → Lucide component ──────────
+const ICON_MAP: Record<string, React.ElementType> = {
+  amphora:              Amphora,
+  rose:                 Rose,
+  users:                Users,
+  bath:                 Bath,
+  heart:                Heart,
+  house:                HouseIcon,
+  umbrella:             Umbrella,
+  brain:                Brain,
+  bird:                 Bird,
+  info:                 Info,
+  mail:                 Mail,
+  location:             MapPin,
+  mappin:               MapPin,
+  phone:                Phone,
+  home:                 Home,
+  'circle-question-mark': CircleHelp,
+  circlehelp:           CircleHelp,
+  circle:               Circle,
+}
+
+function resolveIcon(name?: string | null, fallback: React.ElementType = Circle): React.ElementType {
+  if (!name?.trim()) return fallback
+  // Normalise: lowercase, remove spaces, collapse multiple dashes
+  const key = name.trim().toLowerCase().replace(/\s+/g, '').replace(/-+/g, '-')
+  return ICON_MAP[key] ?? fallback
 }
 
 // ─── Static nav fallback (used when CMS is unreachable) ─────────────────────
@@ -380,17 +403,17 @@ export function MainNavigation({ locale, navData }: MainNavigationProps) {
       return navData.items.map((item) => ({
         label: item.label,
         href: item.href ?? '/',
-        icon: resolveIcon(item.icon, Heart),
+        icon: resolveIcon(item.icon, Circle),
         description: item.description ?? undefined,
         subItems: item.subItems?.map((sub) => ({
           label: sub.label,
           href: sub.href ?? '#',
-          icon: resolveIcon(sub.icon, Heart),
+          icon: resolveIcon(sub.icon, Circle),
           description: sub.description ?? undefined,
           subSubItems: sub.subSubItems?.map((ss) => ({
             label: ss.label,
             href: ss.href ?? '#',
-            icon: resolveIcon(ss.icon, Heart),
+            icon: resolveIcon(ss.icon, Circle),
             description: ss.description ?? undefined,
           })),
         })),
