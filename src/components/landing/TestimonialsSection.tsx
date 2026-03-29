@@ -48,7 +48,7 @@ export async function TestimonialsSection() {
   })
 
   return (
-    <section id="referenzen" className="py-24 bg-yellow-500/10">
+    <section id="referenzen" className="py-24 bg-teal-60/30">
       <div className="container">
         <div className="text-center mb-16">
           <span className="text-yellow-600 text-sm font-semibold uppercase tracking-wider mb-2 inline-block">

@@ -64,7 +64,7 @@ export function Footer({ locale }: FooterProps) {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
             <div className='w-60 '>
-            <Image src={Logo} alt="ViconiaCare Logo" width={320}className=' bg-stone-300 rounded-lg'/>
+            <Image src={Logo} alt="ViconiaCare Logo" width={320}className=' bg-stone-300/30 rounded-lg'/>
             </div>
             </Link>
             <p className="text-sm text-gray-400 mb-6 leading-relaxed">

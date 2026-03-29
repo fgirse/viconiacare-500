@@ -23,8 +23,8 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-heading font-bold text-foreground mb-1">E-Mail</h3>
-                <a href="mailto:info@pflegehaus-hamburg.de" className="text-primary hover:underline">
-                  info@pflegehaus-hamburg.de
+                <a href="mailto:info@viconiacare.de" className="text-primary hover:underline">
+                  info@viconiacare.de
                 </a>
               </div>
             </div>
@@ -47,7 +47,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-heading font-bold text-foreground mb-1">Adresse</h3>
-                <p className="text-muted-foreground">Musterstraße 42, 20095 Hamburg</p>
+                <p className="text-muted-foreground">Telemannstrasse 21, 20255 Hamburg</p>
               </div>
             </div>
 

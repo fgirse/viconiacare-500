@@ -1,6 +1,5 @@
-import Intro from "@/components/landing/HeroSection5";
+//import Intro from "@/components/landing/HeroSection5";
 import HeroSection6 from "@/components/landing/HeroSection6";
-
 import { HeroSection } from "@/components/landing/HeroSection";
 import ServicesSection from "@/components/landing/ServicesSection";
 import HowItWorksSection from "@/components/landing/HowItWorks";
@@ -12,7 +11,6 @@ import { AppointmentsSection } from "@/components/landing/AppointmentsSection";
 export default async function LandingPage() {
   return (
     <>
-      <Intro />
       <HeroSection6 />
       <HeroSection />
       <ServicesSection />
